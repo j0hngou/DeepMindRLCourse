@@ -12,7 +12,6 @@ def policy_gradient_solver(mab: MultiArmedBandit, n: int, e: int = 0) -> tuple[f
     optimizer = optim.Adam([weights], lr=1e-2)
     total_episodes = n
     total_reward = 0.0
-    e = 0
     for i in range(total_episodes):
         if np.random.rand(1) < e:
             action = np.random.randint(k)
